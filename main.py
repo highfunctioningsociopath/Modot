@@ -38,9 +38,16 @@ async def kick(ctx, member: discord.Member, *, reason=None):
     embed.add_field(name='Reason', value=f'{reason}', inline=True)
     
     # Embed which will be DMed to the person who was kicked out
-    embed2 = discord.Embed()
+    embed2 = discord.Embed(description=f'You were banned from {ctx.guild.name}', colour=0xFF0000)
     
+    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+    
+    
+    # Sends a embed in the channel the command was used on, sends a embed DM to the member and kicks the member
     await ctx.send(embed=embed)
+    await member.send(embed=embed2)
+    await member.kick(reason=reason)
     
 
 '''
