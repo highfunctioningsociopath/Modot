@@ -18,6 +18,13 @@ client.remove_command("help")
 async def on_ready():
     print("Bot online!")
 
+# Kick command
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, member: discord.Member, *, reason=None):
+    embed = discord.Embed(color=discord.Color.red)
+    embed.set_author(name=f'User Kicked | {member}', icon_url=member.avatar_url)
+
 # You can do the following if you're using replit.com and this
 # method dosen't work:
 # client.run(os.getenv('token'))
