@@ -26,20 +26,27 @@ async def on_ready():
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
-    # Embed which will be sent when a person is banned
-    embed = discord.Embed(color=discord.Color.red)
-    
-    embed.set_author(name=f'User Kicked | {member}',icon_url=member.avatar_url)
-    
+    # Embed which will be sent when a person is kicked
+    embed = discord.Embed(colour=0xFF0000)
+
+    embed.set_author(name=f'User Kicked | {member}', icon_url=member.avatar_url)
+
     embed.add_field(name='User', value=f'{member.mention}', inline=True)
+
+    embed.add_field(name='Moderator',value=f'{ctx.author.mention}', inline=True)
+
+    embed.add_field(name='Reason', value=f'{reason}', inline=True)
     
-    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
+    # Embed which will be DMed to the person who was kicked out
+    embed2 = discord.Embed()
+    
+    await ctx.send(embed=embed)
+    
 
 '''
 You can do the following if you're using replit.com and this
 method dosen't work:
 client.run(os.getenv('token'))
-
 You can also use the following if no one can see your code:
 client.run(<your bot token here>)
 This way you don't need a '.env' file and no need to import os and dotenv
