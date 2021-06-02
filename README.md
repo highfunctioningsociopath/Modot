@@ -8,3 +8,9 @@ This bot dosen't use anything complex like cogs and the commands are simple maki
 
 Command | Alias(es) | Description
 ------- | --------- | -----------
+help | Help, HELP | Shows a list of all commands.
+warn | Warn, WARN | Warns the specifies user.
+mute | Mute, MUTE | Mutes the specified user.
+kick | Kick, KICK | Kicks the specified user.
+softban | Softban, SOFTBAN | Softbans the specified user.
+ban | Ban, BAN | Bans the specified user.
