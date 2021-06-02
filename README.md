@@ -1,8 +1,7 @@
 # Modot
-NOTE: The bot is far from finished right now, using it is not recommended
+*A simple, beginner friendly discord moderation bot.
 
-A simple, beginner friendly discord moderation bot made in Discord.py.
-This bot dosen't use anything complex like cogs and the commands are simple making the code easy to understand for beginners, you can also use it as a refrence if you're new to making discord.py bots.
+*Doesn't use anything complex and the code is easy to understand for beginners, making it a good refrence for new discord.py programmers 
 
 ## Commands
 > The default bot prefix is `>`.
