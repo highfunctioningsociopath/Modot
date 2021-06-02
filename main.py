@@ -133,6 +133,6 @@ async def help(ctx):
     
     await ctx.send(embed=embed)
 
-# Gets the environment variable "token" you made in .env file
+# Gets the environment variable "token" you made in .env file(read line 2-4 if you havn't done it)
 dotenv.load_dotenv()
 client.run(os.environ.get("token"))

@@ -6,7 +6,7 @@
 ## Commands
 > The default bot prefix is `>`.
 
-Command | Alias(es) | Description | Format
+Command Name | Alias(es) | Description | Format
 ------- | --------- | ----------- | ------
 help | Help, HELP | Shows a list of all commands. | >help
 warn | Warn, WARN | Warns the specified user. | >warn \<member mention> \<reason>
