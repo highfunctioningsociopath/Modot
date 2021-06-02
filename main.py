@@ -59,19 +59,16 @@ async def ban(ctx, member: discord.Member, *, reason=None):
     # Embed which will be sent when a person is banned
     embed = discord.Embed(colour=0xFF0000)
 
-    embed.set_author(
-        name=f'User Banned | {member}', icon_url=member.avatar_url)
+    embed.set_author(name=f'User Banned | {member}', icon_url=member.avatar_url)
 
     embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator',
-                    value=f'{ctx.author.mention}', inline=True)
+    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
 
     embed.add_field(name='Reason', value=f'{reason}', inline=True)
 
     # Embed which will be DMed to the person who was banned
-    embed2 = discord.Embed(
-        description=f'You were banned from {ctx.guild.name}', colour=0xFF0000)
+    embed2 = discord.Embed(description=f'You were banned from {ctx.guild.name}', colour=0xFF0000)
 
     embed2.add_field(name='Reason', value=f'{reason}', inline=True)
 

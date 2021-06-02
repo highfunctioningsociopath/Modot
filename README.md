@@ -6,12 +6,5 @@ This bot dosen't use anything complex like cogs and the commands are simple maki
 
 ## Commands
 
-### Help
-Shows a list of all commands.
-
-### Warn
-Warns the specified member.
-
-### Mute
-Mutes the specified member.
-
+Command | Alias(es) | Description
+------- | --------- | -----------
