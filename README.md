@@ -6,6 +6,7 @@ This bot dosen't use anything complex like cogs and the commands are simple maki
 
 ## Commands
 > The default bot prefix is `>`.
+
 Command | Alias(es) | Description | Format
 ------- | --------- | ----------- | ------
 help | Help, HELP | Shows a list of all commands. | >help
