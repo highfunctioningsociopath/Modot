@@ -44,9 +44,10 @@ async def kick(ctx, member: discord.Member, *, reason=None):
     embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
     
     
-    # Sends a embed in the channel the command was used on, sends a embed DM to the member and kicks the member
-    await ctx.send(embed=embed)
-    await member.send(embed=embed2)
+    await ctx.send(embed=embed)  # Sends an embed with info in the 
+                                 # channel the command was used on
+    await member.send(embed=embed2)  # DMs an embed with kick info
+                                     # to the person who was kicked
     await member.kick(reason=reason)
     
 
