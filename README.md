@@ -3,6 +3,8 @@
 
 * Doesn't use anything complex and the code is easy to understand for beginners, making it a good refrence for new discord.py programmers.
 
+* Even if you're new to Python, you won't have much trouble understanding the code.
+
 ## Commands
 > The default bot prefix is `>`.
 
