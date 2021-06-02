@@ -6,11 +6,12 @@ This bot dosen't use anything complex like cogs and the commands are simple maki
 
 ## Commands
 
-Command | Alias(es) | Description
-------- | --------- | -----------
-help | Help, HELP | Shows a list of all commands.
-warn | Warn, WARN | Warns the specifies user.
-mute | Mute, MUTE | Mutes the specified user.
-kick | Kick, KICK | Kicks the specified user.
+Command | Alias(es) | Description | Format
+------- | --------- | ----------- | ------
+help | Help, HELP | Shows a list of all commands. | >help
+warn | Warn, WARN | Warns the specifies user. | >warn <member mention> reason
+mute | Mute, MUTE | Mutes the specified user. | >mute <member mention> reason 
+kick | Kick, KICK | Kicks the specified user. | >kick <member mention> reason
 softban | Softban, SOFTBAN | Softbans the specified user.
 ban | Ban, BAN | Bans the specified user.
+
