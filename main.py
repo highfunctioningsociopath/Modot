@@ -111,6 +111,28 @@ async def softban(ctx, member: discord.Member, *, reason=None):
     await member.unban(reason=reason)
 
 
+# Help command
+@client.command(name="help", aliases=["Help", "HELP"])
+async def help(ctx):
+    # Embed with list of all commands
+    embed = discord.Embed(description="List of all commands:", colour=0x000000)
+    
+    embed.add_field(name="help", value="Shows a list of all commands.", inline=True)
+    
+    embed.add_field(name="warn", value="Warns the specified user.", inline=True)
+    
+    embed.add_field(name="warnings", value="Shows all the warnings of the specified user.", inline=True)
+    
+    embed.add_field(name="mute", value="Mutes the specified user.", inline=True)
+    
+    embed.add_field(name="kick", value="Kicks the specified user.", inline=True)
+    
+    embed.add_field(name="softban", value="Softbans the specified user.", inline=True)
+    
+    embed.add_field(name="ban", value="Bans the specified user.", inline=True)
+    
+    await ctx.send(embed=embed)
+
 '''
 You can do the following if you're using replit.com and this
 method dosen't work:
