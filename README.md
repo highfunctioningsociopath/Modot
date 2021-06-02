@@ -5,7 +5,7 @@ A simple, beginner friendly discord moderation bot made in Discord.py.
 This bot dosen't use anything complex like cogs and the commands are simple making the code easy to understand for beginners, you can also use it as a refrence if you're new to making discord.py bots.
 
 ## Commands
-
+> The default bot prefix is `>`.
 Command | Alias(es) | Description | Format
 ------- | --------- | ----------- | ------
 help | Help, HELP | Shows a list of all commands. | >help
