@@ -133,6 +133,43 @@ async def help(ctx):
     
     await ctx.send(embed=embed)
 
+
+# Mute command
+@client.command(name="mute", aliases=["Mute", "MUTE"])
+@commands.has_permissions(kick_members=True)
+async def mute(ctx, member: discord.Member, *, reason=None):
+    muteRole = discord.utils.get(ctx.guild.roles, name="mute")
+    
+    if not muteRole:
+        muteRole = await ctx.guild.create_role(name="Muted")
+        
+        for channel in ctx.guild.channels:
+            await channel.set_permissions(muteRole, speak=False, send_messages=True)
+    
+    # Embed which will be sent when a person is muted
+    embed = discord.Embed(colour=0xFF0000)
+
+    embed.set_author(name=f'User Muted | {member}', icon_url=member.avatar_url)
+
+    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+
+    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
+
+    embed.add_field(name='Reason', value=f'{reason}', inline=True)
+
+    # Embed which will be DMed to the person who was muted
+    embed2 = discord.Embed(description=f'You were banned in {ctx.guild.name}', colour=0xFF0000)
+
+    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+
+    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+    
+    await member.add_roles(muteRole, reason=reason)
+    await ctx.send(embed=embed)  # Sends an embed with info in the
+                                 # channel the command was used on
+    await member.send(embed=embed2)  # DMs an embed with mute
+                                     # info to the person who was mute
+
 # Gets the environment variable "token" you made in .env file(read line 2-4 if you havn't done it)
 dotenv.load_dotenv()
 client.run(os.environ.get("token"))
