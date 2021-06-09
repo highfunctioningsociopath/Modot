@@ -10,7 +10,7 @@
 
 Command Name | Alias(es) | Description | Format
 ------- | --------- | ----------- | ------
-help | Help, HELP | Shows a list of all commands. | >help
+help | Help, HELP | Shows a list of commands. | >help
 mute | Mute, MUTE | Mutes the specified user. | >mute \<`member mention`> \<`reason`>
 unmute | Unmute, UNMUTE | Unmutes the specified user. | >unmute \<`member mention`> \<`reason`> 
 kick | Kick, KICK | Kicks the specified user. | >kick \<`member mention`> \<`reason`>
