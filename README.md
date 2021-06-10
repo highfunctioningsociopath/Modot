@@ -16,8 +16,7 @@ unmute | Unmute, UNMUTE | Unmutes the specified user. | >unmute \<`member mentio
 kick | Kick, KICK | Kicks the specified user. | >kick \<`member mention`> \<`reason`>
 softban | Softban, SOFTBAN | Softbans the specified user. | >softban \<`member mention`> \<`reason`>
 ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>
-
-*You cannot use commands on yourslef*
+*You cannot use commands on yourself*
 
 ## Prerequisites
 Make a file called '`.env`'
