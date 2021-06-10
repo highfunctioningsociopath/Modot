@@ -210,7 +210,7 @@ async def unmute(ctx, member: discord.Member, *, reason=None):
 
         embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
         
-        await member.add_roles(muteRole, reason=reason)
+        await member.remove_roles(muteRole, reason=reason)
         await ctx.send(embed=embed)  # Sends an embed with info in the
                                     # channel the command was used on
         await member.send(embed=embed2)  # DMs an embed with unmute
