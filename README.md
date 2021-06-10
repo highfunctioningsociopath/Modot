@@ -17,10 +17,11 @@ kick | Kick, KICK | Kicks the specified user. | >kick \<`member mention`> \<`rea
 softban | Softban, SOFTBAN | Softbans the specified user. | >softban \<`member mention`> \<`reason`>
 ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>k
 
-*You cannot use commands on yourself*
+*You cannot use commands on yourself.*
 
 ## Prerequisites
 Make a file called '`.env`'
 In that file, type:
 `token = <your bot token>`
-*This is also commented in the code*
+
+*This is also commented in the code.*
