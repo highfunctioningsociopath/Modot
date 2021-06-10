@@ -1,5 +1,5 @@
 '''
-Prerequisite:
+Prerequisites:
 Make a file called '.env'
 In that file, type 'token = <your bot token>'
 '''
@@ -26,89 +26,98 @@ async def on_ready():
 @client.command(name="kick", aliases=["Kick", "KICK"])
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
-    # Embed which will be sent when a person is kicked
-    embed = discord.Embed(colour=0xFF0000)
+    if member == ctx.author:
+        await ctx.send("You can't kick yourself!")
+    else:
+        # Embed which will be sent when a person is kicked
+        embed = discord.Embed(colour=0xFF0000)
 
-    embed.set_author(name=f'User Kicked | {member}', icon_url=member.avatar_url)
+        embed.set_author(name=f'User Kicked | {member}', icon_url=member.avatar_url)
 
-    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+        embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator',value=f'{ctx.author.mention}', inline=True)
+        embed.add_field(name='Moderator',value=f'{ctx.author.mention}', inline=True)
 
-    embed.add_field(name='Reason', value=f'{reason}', inline=True)
-    
-    # Embed which will be DMed to the person who was kicked
-    embed2 = discord.Embed(description=f'You were kicked from {ctx.guild.name}', colour=0xFF0000)
-    
-    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
-    
-    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
-    
-    
-    await ctx.send(embed=embed)  # Sends an embed with info in the 
-                                 # channel the command was used on
-    await member.send(embed=embed2)  # DMs an embed with kick info
-                                     # to the person who was kicked
-    await member.kick(reason=reason)
+        embed.add_field(name='Reason', value=f'{reason}', inline=True)
+        
+        # Embed which will be DMed to the person who was kicked
+        embed2 = discord.Embed(description=f'**You were kicked from {ctx.guild.name}**', colour=0xFF0000)
+        
+        embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+        
+        embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+        
+        
+        await ctx.send(embed=embed)  # Sends an embed with info in the 
+                                    # channel the command was used on
+        await member.send(embed=embed2)  # DMs an embed with kick info
+                                        # to the person who was kicked
+        await member.kick(reason=reason)
     
 
 # Ban command
 @client.command(name="ban", aliases=["Ban", "BAN"])
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
-    # Embed which will be sent when a person is banned
-    embed = discord.Embed(colour=0xFF0000)
+    if member == ctx.author:
+        await ctx.send("You can't ban yourself!")
+    else:
+        # Embed which will be sent when a person is banned
+        embed = discord.Embed(colour=0xFF0000)
 
-    embed.set_author(name=f'User Banned | {member}', icon_url=member.avatar_url)
+        embed.set_author(name=f'User Banned | {member}', icon_url=member.avatar_url)
 
-    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+        embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
+        embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
 
-    embed.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    # Embed which will be DMed to the person who was banned
-    embed2 = discord.Embed(description=f'You were banned from {ctx.guild.name}', colour=0xFF0000)
+        # Embed which will be DMed to the person who was banned
+        embed2 = discord.Embed(description=f'You were banned from {ctx.guild.name}', colour=0xFF0000)
 
-    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed2.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+        embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
 
-    await ctx.send(embed=embed)  # Sends an embed with info in the
-                                 # channel the command was used on
-    await member.send(embed=embed2)  # DMs an embed with ban info
-                                     # to the person who was banned
-    await member.ban(reason=reason)
+        await ctx.send(embed=embed)  # Sends an embed with info in the
+                                    # channel the command was used on
+        await member.send(embed=embed2)  # DMs an embed with ban info
+                                        # to the person who was banned
+        await member.ban(reason=reason)
 
 
 # Softban command
 @client.command(name="softban", aliases=["Softban", "SOFTBAN"])
 @commands.has_permissions(ban_members=True)
 async def softban(ctx, member: discord.Member, *, reason=None):
-    # Embed which will be sent when a person is softbanned
-    embed = discord.Embed(colour=0xFF0000)
+    if member == ctx.author:
+        await ctx.send("You can't softban yourself!")
+    else:
+        # Embed which will be sent when a person is softbanned
+        embed = discord.Embed(colour=0xFF0000)
 
-    embed.set_author(name=f'User Softanned | {member}', icon_url=member.avatar_url)
+        embed.set_author(name=f'User Softanned | {member}', icon_url=member.avatar_url)
 
-    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+        embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator',value=f'{ctx.author.mention}', inline=True)
+        embed.add_field(name='Moderator',value=f'{ctx.author.mention}', inline=True)
 
-    embed.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    # Embed which will be DMed to the person who was softbanned
-    embed2 = discord.Embed(description=f'You were softbanned from {ctx.guild.name}', colour=0xFF0000)
+        # Embed which will be DMed to the person who was softbanned
+        embed2 = discord.Embed(description=f'You were softbanned from {ctx.guild.name}', colour=0xFF0000)
 
-    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed2.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+        embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
 
-    await ctx.send(embed=embed)  # Sends an embed with info in the
-                                 # channel the command was used on
-    await member.send(embed=embed2)  # DMs an embed with softban 
-                                     # info to the person who was softbanned
-    await member.ban(reason=reason)
-    await member.unban(reason=reason)
+        await ctx.send(embed=embed)  # Sends an embed with info in the
+                                    # channel the command was used on
+        await member.send(embed=embed2)  # DMs an embed with softban 
+                                        # info to the person who was softbanned
+        await member.ban(reason=reason)
+        await member.unban(reason=reason)
 
 
 # Help command
@@ -146,60 +155,66 @@ async def mute(ctx, member: discord.Member, *, reason=None):
         for channel in ctx.guild.channels:
             await channel.set_permissions(muteRole, speak=False, send_messages=True)
     
-    # Embed which will be sent when a person is muted
-    embed = discord.Embed(colour=0xFF0000)
+    if member == ctx.author:
+        await ctx.send("You can't mute yourself!")
+    else:
+        # Embed which will be sent when a person is muted
+        embed = discord.Embed(colour=0xFF0000)
 
-    embed.set_author(name=f'User Muted | {member}', icon_url=member.avatar_url)
+        embed.set_author(name=f'User Muted | {member}', icon_url=member.avatar_url)
 
-    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+        embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
+        embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
 
-    embed.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    # Embed which will be DMed to the person who was muted
-    embed2 = discord.Embed(description=f'You were muted in {ctx.guild.name}', colour=0xFF0000)
+        # Embed which will be DMed to the person who was muted
+        embed2 = discord.Embed(description=f'You were muted in {ctx.guild.name}', colour=0xFF0000)
 
-    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed2.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
-    
-    await member.add_roles(muteRole, reason=reason)
-    await ctx.send(embed=embed)  # Sends an embed with info in the
-                                 # channel the command was used on
-    await member.send(embed=embed2)  # DMs an embed with mute
-                                     # info to the person who was muted
+        embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+        
+        await member.add_roles(muteRole, reason=reason)
+        await ctx.send(embed=embed)  # Sends an embed with info in the
+                                    # channel the command was used on
+        await member.send(embed=embed2)  # DMs an embed with mute
+                                        # info to the person who was muted
 
 
-# Unute command
+# Unmute command
 @client.command(name="unmute", aliases=["Unmute", "UNMUTE"])
 @commands.has_permissions(kick_members=True)
 async def unmute(ctx, member: discord.Member, *, reason=None):
     muteRole = discord.utils.get(ctx.guild.roles, name="mute")
     
-    # Embed which will be sent when a person is muted
-    embed = discord.Embed(colour=0x00ff00)
+    if member == ctx.author:
+        await ctx.send("You can't unmute yourself!")
+    else:
+        # Embed which will be sent when a person is muted
+        embed = discord.Embed(colour=0x00ff00)
 
-    embed.set_author(name=f'User Unmuted | {member}', icon_url=member.avatar_url)
+        embed.set_author(name=f'User Unmuted | {member}', icon_url=member.avatar_url)
 
-    embed.add_field(name='User', value=f'{member.mention}', inline=True)
+        embed.add_field(name='User', value=f'{member.mention}', inline=True)
 
-    embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
+        embed.add_field(name='Moderator', value=f'{ctx.author.mention}', inline=True)
 
-    embed.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    # Embed which will be DMed to the person who was muted
-    embed2 = discord.Embed(description=f'You were unmuted in {ctx.guild.name}', colour=0xFF0000)
+        # Embed which will be DMed to the person who was muted
+        embed2 = discord.Embed(description=f'You were unmuted in {ctx.guild.name}', colour=0xFF0000)
 
-    embed2.add_field(name='Reason', value=f'{reason}', inline=True)
+        embed2.add_field(name='Reason', value=f'{reason}', inline=True)
 
-    embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
-    
-    await member.add_roles(muteRole, reason=reason)
-    await ctx.send(embed=embed)  # Sends an embed with info in the
-                                 # channel the command was used on
-    await member.send(embed=embed2)  # DMs an embed with unmute
-                                     # info to the person who was unmuted
+        embed2.add_field(name='Moderator', value=f'{ctx.author.name}', inline=True)
+        
+        await member.add_roles(muteRole, reason=reason)
+        await ctx.send(embed=embed)  # Sends an embed with info in the
+                                    # channel the command was used on
+        await member.send(embed=embed2)  # DMs an embed with unmute
+                                        # info to the person who was unmuted
 
 # Gets the environment variable "token" you made in .env file(read line 2-4 if you havn't done it)
 dotenv.load_dotenv()

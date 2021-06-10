@@ -10,9 +10,18 @@
 
 Command Name | Alias(es) | Description | Format
 ------- | --------- | ----------- | ------
-help | Help, HELP | Shows a list of commands. | >help
+help | Help, HELP | Shows a list of all commands. | >help
 mute | Mute, MUTE | Mutes the specified user. | >mute \<`member mention`> \<`reason`>
 unmute | Unmute, UNMUTE | Unmutes the specified user. | >unmute \<`member mention`> \<`reason`> 
 kick | Kick, KICK | Kicks the specified user. | >kick \<`member mention`> \<`reason`>
 softban | Softban, SOFTBAN | Softbans the specified user. | >softban \<`member mention`> \<`reason`>
 ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>
+
+*You cannot use commands on yourslef*
+
+## Prerequisites
+Make a file called '.env'
+In that file, type:
+`token = <your bot token>`
+
+*This is also commented in the code*
