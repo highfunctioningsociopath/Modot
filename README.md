@@ -20,8 +20,7 @@ ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>
 *You cannot use commands on yourslef*
 
 ## Prerequisites
-Make a file called '.env'
+Make a file called '`.env`'
 In that file, type:
 `token = <your bot token>`
-
 *This is also commented in the code*
