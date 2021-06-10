@@ -15,7 +15,8 @@ mute | Mute, MUTE | Mutes the specified user. | >mute \<`member mention`> \<`rea
 unmute | Unmute, UNMUTE | Unmutes the specified user. | >unmute \<`member mention`> \<`reason`> 
 kick | Kick, KICK | Kicks the specified user. | >kick \<`member mention`> \<`reason`>
 softban | Softban, SOFTBAN | Softbans the specified user. | >softban \<`member mention`> \<`reason`>
-ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>
+ban | Ban, BAN | Bans the specified user. | >ban \<`member mention`> \<`reason`>k
+
 *You cannot use commands on yourself*
 
 ## Prerequisites
